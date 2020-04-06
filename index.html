@@ -18,7 +18,7 @@
 			div.source {opacity:0.5}
 			#sources:hover, div.source:hover {opacity:1}
 				
-			#sources, #reports {border:1px solid #999; border-radius:10px; margin-bottom:2em}
+			#sources, #reports {border:1px solid #999; border-radius:10px; margin:1em 0}
 			.btn { margin-bottom:10px; }
 				.btn:hover .btn-outline-label img {-webkit-filter: brightness(0) invert(100%); }
 				.btn img {height:2em}
@@ -26,6 +26,8 @@
 					.btn-outline-label {position:relative; display: inline-block; padding:3px 0; padding-right:12px; border-radius: 3px 0 0 3px;}
 					.btn-blank-label {display:inline-block; height:2.4em; vertical-align:middle; padding:3px 0}
 					.btn-labeled {padding-top: 0;padding-bottom: 0;}
+				
+			big {display:inline-block; margin:0.5em 0.25em; font-size:1.5em}
 		</style>
 
 		<link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
@@ -56,7 +58,7 @@
 					<img src="img/mas-logo-square.png" style="width:6em; " />
 					<img src="img/iniciativas.png" style="width:5em; " />
 				</div>
-				<div class="col-md-8 col-12 text-md-left text-sm-center mb-2 pb-2">
+				<div class="col-md-8 col-12 text-md-left text-center mb-2 pb-2">
 					<h1><b>MAS dashboard</b></h1>
 					Shortcuts to <a href="#reports">reports</a> &amp; <a href="#sources">sources</a>
 				</div>
@@ -68,17 +70,17 @@
 			<div id="reports">
 				<big>&nbsp;&nbsp;<a href="https://drive.google.com/drive/folders/1DzD_MGbXfnsw2SlYiKnczJ2U7Y8AxUMK"><b>📁 Reports</b></a>:</big>
 				<dl class="row">
-					<dt class="col-lg-3 col-md-5 col-sm-12 text-md-right text-sm-center"></dt>
-					<dd class="col-lg-9 col-md-7 col-sm-12 text-md-left text-sm-center">
+					<dt class="col-lg-3 col-md-5 col-sm-12 text-md-right text-center"></dt>
+					<dd class="col-lg-9 col-md-7 col-sm-12 text-md-left text-center">
 						<a href="https://docs.google.com/spreadsheets/d/1S3_Z1yqCunAd3_peoq0AwFp8oYSJkG02mdc1pC9gsdA/edit" class="btn btn-labeled btn-secondary"><span class="btn-label"><img src="img/icons/hospital.png" /></span>Hospital</a>
 						<a href="https://docs.google.com/spreadsheets/d/1S3_Z1yqCunAd3_peoq0AwFp8oYSJkG02mdc1pC9gsdA/edit#gid=1013263684" class="btn btn-labeled btn-secondary"><span class="btn-label"><img src="img/icons/collaborator.png" /></span>Collaborator</a>
 						<a href="https://docs.google.com/spreadsheets/d/1S3_Z1yqCunAd3_peoq0AwFp8oYSJkG02mdc1pC9gsdA/edit#gid=818465297" class="btn btn-labeled btn-secondary"><span class="btn-label"><img src="img/icons/multifilter.png" /></span>Multifilter</a>
 					</dt>
 					
-					<dt class="col-lg-3 col-md-5 col-sm-12 text-md-right text-sm-center">
+					<dt class="col-lg-3 col-md-5 col-sm-12 text-md-right text-center">
 						<a href="https://docs.google.com/spreadsheets/d/1y22oMU8TaijMCpchBmVogUoZXTAMOiPF6oRvJwGmlrE/edit#gid=143358988" class="btn btn-labeled btn-warning"><span class="btn-label"><img src="img/icons/quality.png" /></span>Quality</a>
 					</dt>
-					<dd class="col-lg-9 col-md-7 col-sm-12 text-md-left text-sm-center">
+					<dd class="col-lg-9 col-md-7 col-sm-12 text-md-left text-center">
 						<a href="https://docs.google.com/spreadsheets/d/1y22oMU8TaijMCpchBmVogUoZXTAMOiPF6oRvJwGmlrE/edit#gid=143358988" class="btn btn-labeled btn-outline-warning"><span class="btn-outline-label"><img src="img/icons/evat.png" /></span>EVAT</a>
 						<a href="https://docs.google.com/spreadsheets/d/1y22oMU8TaijMCpchBmVogUoZXTAMOiPF6oRvJwGmlrE/edit#gid=1473579946" class="btn btn-labeled btn-outline-warning"><span class="btn-outline-label"><img src="img/icons/hora-dorada.png" /></span>Hora Dorada</a>
 							<a href="https://docs.google.com/spreadsheets/d/1y22oMU8TaijMCpchBmVogUoZXTAMOiPF6oRvJwGmlrE/edit#gid=1962257344" class="btn btn-labeled btn-outline-warning"><span class="btn-outline-label"><img src="img/icons/hora-dorada.png" /></span>HD Graphs</a>
@@ -87,28 +89,28 @@
 						<a href="https://docs.google.com/spreadsheets/d/1y22oMU8TaijMCpchBmVogUoZXTAMOiPF6oRvJwGmlrE/edit#gid=1771749873" class="btn btn-labeled btn-outline-warning"><span class="btn-outline-label"><img src="img/icons/epec.png" /></span>EPEC</a>
 					</dd>
 						
-					<dt class="col-lg-3 col-md-5 col-sm-12 text-md-right text-sm-center">
+					<dt class="col-lg-3 col-md-5 col-sm-12 text-md-right text-center">
 						<a href="https://docs.google.com/spreadsheets/d/1k4PZCE_oGbvEFSeuOSzOOBIGXbghkIqFXkC-C_auTBE/edit#gid=0" class="btn btn-labeled btn-danger"><span class="btn-label"><img src="img/icons/collaboration.png" /></span>Collaboration</a>
 					</dt>
-					<dd class="col-lg-9 col-md-7 col-sm-12 text-md-left text-sm-center">
+					<dd class="col-lg-9 col-md-7 col-sm-12 text-md-left text-center">
 						<a href="https://docs.google.com/spreadsheets/d/1k4PZCE_oGbvEFSeuOSzOOBIGXbghkIqFXkC-C_auTBE/edit#gid=839136671" class="btn btn-labeled btn-outline-danger"><span class="btn-outline-label"><img src="img/icons/contracts.png" /></span>Contracts</a>
 						<a href="https://docs.google.com/spreadsheets/d/1k4PZCE_oGbvEFSeuOSzOOBIGXbghkIqFXkC-C_auTBE/edit#gid=857883831" class="btn btn-labeled btn-outline-danger"><span class="btn-outline-label"><img src="img/icons/global-academy.png" /></span>Global Academy</a>
 						<a href="https://docs.google.com/spreadsheets/d/1k4PZCE_oGbvEFSeuOSzOOBIGXbghkIqFXkC-C_auTBE/edit#gid=1074610102" class="btn btn-labeled btn-outline-danger"><span class="btn-outline-label"><img src="img/icons/workshops.png" /></span>Workshops</a>
 						<a href="https://docs.google.com/spreadsheets/d/1k4PZCE_oGbvEFSeuOSzOOBIGXbghkIqFXkC-C_auTBE/edit#gid=745330941" class="btn btn-labeled btn-outline-danger"><span class="btn-outline-label"><img src="img/icons/cdla.png" /></span>CDLA Staff</a>
 					</dd>
 						
-					<dt class="col-lg-3 col-md-5 col-sm-12 text-md-right text-sm-center">
+					<dt class="col-lg-3 col-md-5 col-sm-12 text-md-right text-center">
 						<a href="https://docs.google.com/spreadsheets/d/1m_iu3cgayprkRe8ZAc6M8CKVa-W1cC3bSAiNliD-REo/edit" class="btn btn-labeled btn-info"><span class="btn-label"><img src="img/icons/evidence.png" /></span>Evidence</a>
 					</dt>
-					<dd class="col-lg-9 col-md-7 col-sm-12 text-md-left text-sm-center">
+					<dd class="col-lg-9 col-md-7 col-sm-12 text-md-left text-center">
 						<a href="https://docs.google.com/spreadsheets/d/1m_iu3cgayprkRe8ZAc6M8CKVa-W1cC3bSAiNliD-REo/edit#gid=527327336" class="btn btn-labeled btn-outline-info"><span class="btn-outline-label"><img src="img/icons/research.png" /></span>Research</a>
 						<a href="https://docs.google.com/spreadsheets/d/1m_iu3cgayprkRe8ZAc6M8CKVa-W1cC3bSAiNliD-REo/edit#gid=556556191" class="btn btn-labeled btn-outline-info"><span class="btn-outline-label"><img src="img/icons/retro.png" /></span>RETRO</a>
 					</dd>
 						
-					<dt class="col-lg-3 col-md-5 col-sm-12 text-md-right text-sm-center">
+					<dt class="col-lg-3 col-md-5 col-sm-12 text-md-right text-center">
 						<a href="https://docs.google.com/spreadsheets/d/1SyWKtT0eu8U6qlS7IN-ukakoNvHdsN3iFGGVkHUNvtE/edit" class="btn btn-labeled btn-success"><span class="btn-label"><img src="img/icons/modernization.png" /></span>Modernization</a>
 					</dt>
-					<dd class="col-lg-9 col-md-7 col-sm-12 text-md-left text-sm-center">
+					<dd class="col-lg-9 col-md-7 col-sm-12 text-md-left text-center">
 						<a href="https://docs.google.com/spreadsheets/d/1SyWKtT0eu8U6qlS7IN-ukakoNvHdsN3iFGGVkHUNvtE/edit#gid=527327336" class="btn btn-labeled btn-outline-success"><span class="btn-outline-label"><img src="img/icons/bridge.png" /></span>Bridge</a>
 						<a href="https://docs.google.com/spreadsheets/d/1SyWKtT0eu8U6qlS7IN-ukakoNvHdsN3iFGGVkHUNvtE/edit#gid=2005355474" class="btn btn-labeled btn-outline-success"><span class="btn-outline-label"><img src="img/icons/fellows.png" /></span>Fellows</a>
 					</dd>
@@ -118,16 +120,16 @@
 			<div id="sources">
 				<big>&nbsp;&nbsp;<a href="https://drive.google.com/drive/folders/1EWW1vwouVBBH4hKfOS7gOPZKRVPI4npO"><b>📁 Sources</b></a>:</big>
 				<dl class="row">
-					<dt class="col-lg-3 col-md-5 col-sm-12 text-md-right text-sm-center"></dt> </dt>
-					<dd class="col-lg-9 col-md-7 col-sm-12 text-md-left text-sm-center">
+					<dt class="col-lg-3 col-md-5 col-sm-12 text-md-right text-center"></dt> </dt>
+					<dd class="col-lg-9 col-md-7 col-sm-12 text-md-left text-center">
 						<a href="https://docs.google.com/spreadsheets/d/18SHtwjlkycVyr4wKMWVtfMUl6ukj4cEm8wROSmOXJr4/edit?usp=drive_web&ouid=113571836091759690986" class="btn btn-labeled btn-secondary"><span class="btn-label"><img src="img/icons/hospital.png" /></span>Hospitals</a>
 						<a href="https://docs.google.com/spreadsheets/d/18SHtwjlkycVyr4wKMWVtfMUl6ukj4cEm8wROSmOXJr4/edit#gid=0" class="btn btn-labeled btn-secondary"><span class="btn-label"><img src="img/icons/collaborator.png" /></span>Collaborators</a>
 					</dd>
 						
-					<dt class="col-lg-3 col-md-5 col-sm-12 text-md-right text-sm-center">
+					<dt class="col-lg-3 col-md-5 col-sm-12 text-md-right text-center">
 						<a href="https://docs.google.com/spreadsheets/d/1l4qPhTCR6Kpz_dlCwkmZZd-ItvsYGeHNcCrjLQFgTuE/edit#gid=1846558551" class="btn btn-labeled btn-warning"><span class="btn-label"><img src="img/icons/quality.png" /></span>Quality</a>
 					</dt>
-					<dd class="col-lg-9 col-md-7 col-sm-12 text-md-left text-sm-center">
+					<dd class="col-lg-9 col-md-7 col-sm-12 text-md-left text-center">
 						<a href="https://docs.google.com/spreadsheets/d/1l4qPhTCR6Kpz_dlCwkmZZd-ItvsYGeHNcCrjLQFgTuE/edit#gid=1846558551" class="btn btn-labeled btn-outline-warning"><span class="btn-outline-label"><img src="img/icons/evat.png" /></span>EVAT People</a>
 						<a href="https://docs.google.com/spreadsheets/d/1l4qPhTCR6Kpz_dlCwkmZZd-ItvsYGeHNcCrjLQFgTuE/edit#gid=0" class="btn btn-labeled btn-outline-warning"><span class="btn-outline-label"><img src="img/icons/evat.png" /></span>EVAT Status</a>
 						<a href="https://docs.google.com/spreadsheets/d/1l4qPhTCR6Kpz_dlCwkmZZd-ItvsYGeHNcCrjLQFgTuE/edit#gid=52548590" class="btn btn-labeled btn-outline-warning"><span class="btn-outline-label"><img src="img/icons/hora-dorada.png" /></span>HD People</a>
@@ -139,20 +141,20 @@
 						<a href="https://docs.google.com/spreadsheets/d/1l4qPhTCR6Kpz_dlCwkmZZd-ItvsYGeHNcCrjLQFgTuE/edit#gid=2108947690" class="btn btn-labeled btn-outline-warning"><span class="btn-outline-label"><img src="img/icons/epec.png" /></span>EPEC</a>
 					</dd>
 						
-					<dt class="col-lg-3 col-md-5 col-sm-12 text-md-right text-sm-center">
+					<dt class="col-lg-3 col-md-5 col-sm-12 text-md-right text-center">
 						<a href="https://docs.google.com/spreadsheets/d/1rU_NcJzrAYgBNM61EPFP2EnmxZkDB5QZZg9r0vJoE8o/edit" class="btn btn-labeled btn-danger"><span class="btn-label"><img src="img/icons/collaboration.png" /></span>Collaboration</a>
 					</dt>
-					<dd class="col-lg-9 col-md-7 col-sm-12 text-md-left text-sm-center">
+					<dd class="col-lg-9 col-md-7 col-sm-12 text-md-left text-center">
 						<a href="https://docs.google.com/spreadsheets/d/1rU_NcJzrAYgBNM61EPFP2EnmxZkDB5QZZg9r0vJoE8o/edit#gid=0" class="btn btn-labeled btn-outline-danger"><span class="btn-outline-label"><img src="img/icons/contracts.png" /></span>Contracts</a>
 						<a href="https://docs.google.com/spreadsheets/d/1rU_NcJzrAYgBNM61EPFP2EnmxZkDB5QZZg9r0vJoE8o/edit#gid=1868597045" class="btn btn-labeled btn-outline-danger"><span class="btn-outline-label"><img src="img/icons/global-academy.png" /></span>Global Academy</a>
 						<a href="https://docs.google.com/spreadsheets/d/1rU_NcJzrAYgBNM61EPFP2EnmxZkDB5QZZg9r0vJoE8o/edit#gid=1763208660" class="btn btn-labeled btn-outline-danger"><span class="btn-outline-label"><img src="img/icons/workshops.png" /></span>Workshops</a>
 						<a href="https://docs.google.com/spreadsheets/d/1rU_NcJzrAYgBNM61EPFP2EnmxZkDB5QZZg9r0vJoE8o/edit#gid=799881043" class="btn btn-labeled btn-outline-danger"><span class="btn-outline-label"><img src="img/icons/cdla.png" /></span>CDLA Staff</a>
 					</dd>
 						
-					<dt class="col-lg-3 col-md-5 col-sm-12 text-md-right text-sm-center">
+					<dt class="col-lg-3 col-md-5 col-sm-12 text-md-right text-center">
 						<a href="https://docs.google.com/spreadsheets/d/1D24bS-tNRsd1ETq4U9ixIyzzOygj52TECpILeRpvQPQ/edit" class="btn btn-labeled btn-info"><span class="btn-label"><img src="img/icons/evidence.png" /></span>Evidence</a>
 					</dt>
-					<dd class="col-lg-9 col-md-7 col-sm-12 text-md-left text-sm-center">
+					<dd class="col-lg-9 col-md-7 col-sm-12 text-md-left text-center">
 						<a href="https://docs.google.com/spreadsheets/d/1D24bS-tNRsd1ETq4U9ixIyzzOygj52TECpILeRpvQPQ/edit#gid=59770205" class="btn btn-labeled btn-outline-info"><span class="btn-outline-label"><img src="img/icons/research.png" /></span>CIC</a>
 						<a href="https://docs.google.com/spreadsheets/d/1D24bS-tNRsd1ETq4U9ixIyzzOygj52TECpILeRpvQPQ/edit#gid=0" class="btn btn-labeled btn-outline-info"><span class="btn-outline-label"><img src="img/icons/research.png" /></span>IRB</a>
 						<a href="https://docs.google.com/spreadsheets/d/1D24bS-tNRsd1ETq4U9ixIyzzOygj52TECpILeRpvQPQ/edit#gid=543295522" class="btn btn-labeled btn-outline-info"><span class="btn-outline-label"><img src="img/icons/research.png" /></span>Publications</a>
@@ -162,10 +164,10 @@
 						<a href="https://docs.google.com/spreadsheets/d/1D24bS-tNRsd1ETq4U9ixIyzzOygj52TECpILeRpvQPQ/edit#gid=623708916" class="btn btn-labeled btn-outline-info"><span class="btn-outline-label"><img src="img/icons/retro.png" /></span>RETRO Status</a>
 					</dd>
 						
-					<dt class="col-lg-3 col-md-5 col-sm-12 text-md-right text-sm-center">
+					<dt class="col-lg-3 col-md-5 col-sm-12 text-md-right text-center">
 						<a href="https://docs.google.com/spreadsheets/d/1hmNfC83rNaOXI_L5GSGEal10ODBzmQyqAfg_28kxDKY/edit" class="btn btn-labeled btn-success"><span class="btn-label"><img src="img/icons/modernization.png" /></span>Modernization</a>
 					</dt>
-					<dd class="col-lg-9 col-md-7 col-sm-12 text-md-left text-sm-center">
+					<dd class="col-lg-9 col-md-7 col-sm-12 text-md-left text-center">
 						<a href="https://docs.google.com/spreadsheets/d/1hmNfC83rNaOXI_L5GSGEal10ODBzmQyqAfg_28kxDKY/edit#gid=0" class="btn btn-labeled btn-outline-success"><span class="btn-outline-label"><img src="img/icons/bridge.png" /></span>Bridge</a>
 						<a href="https://docs.google.com/spreadsheets/d/1hmNfC83rNaOXI_L5GSGEal10ODBzmQyqAfg_28kxDKY/edit#gid=1750327500" class="btn btn-labeled btn-outline-success"><span class="btn-outline-label"><img src="img/icons/fellows.png" /></span>Fellows</a>
 					</dd>
