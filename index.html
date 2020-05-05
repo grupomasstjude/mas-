@@ -11,14 +11,21 @@
 		<title>MAS dashboard</title>
 
 		<style>
-			body {font-family:sans-serif; line-height:2em;}
-			.title {color:#7c1e34; border-bottom:5px solid #c50b3b}
+			body {font-family:sans-serif; line-height:2em; margin-top:2em; background:#f5f5f5}
+
+			#top-bkg {position:fixed; top:0; right:0; width:100%; height:4em; background:transparent url("img/bkg-to-repeat.png") repeat-x fixed top; background-size:auto 4em; z-index:10; text-align:right}
+			#top-bkg img {height:4em; margin-top:0.04em}
+			#bottom-bkg {position:fixed; bottom:0; left:0; width:100%; height:4em; background:transparent url("img/bottom-bkg-to-repeat.png") repeat-x fixed bottom; background-size:auto 4em; z-index:10}
+			#bottom-bkg img {height:4em; margin-top:-0.04em}
+
+			.title {color:#7c1e34}/*; border-bottom:5px solid #c50b3b}*/
+			.title a {color:#7c1e34; text-decoration:underline; font-weight:bold}
 				
-			#sources {opacity:0.5; margin-top:2em}
 			div.source {opacity:0.5}
-			#sources:hover, div.source:hover {opacity:1}
 				
-			#sources, #reports {border:1px solid #999; border-radius:10px; margin:1em 0}
+			#sources, #reports {border:1px solid #999; border-radius:10px; margin:1em 0; background:white}
+			#sources {opacity:0.5; margin-top:2em; background:transparent}
+			#sources:hover, div.source:hover {opacity:1; background:white}
 			.btn { margin-bottom:10px; }
 				.btn:hover .btn-outline-label img {-webkit-filter: brightness(0) invert(100%); }
 				.btn img {height:2em}
@@ -40,23 +47,24 @@
 	</head>
 	<body>
 
+<div id="top-bkg"><img src="img/top-bkg.png" /></div>
+<div id="bottom-bkg"><img src="img/bottom-bkg.png" /></div>
 <div class="container">
 	<div class="row justify-content-center">
-		<div class="col-12 mt-4 mb-4 title">
-			<div class="row">
-				<div class="col-md-4 col-12 text-center mb-2" style="text-align:center">
-					<img src="img/mas-logo-square.png" style="width:6em; " />
-					<img src="img/iniciativas.png" style="width:5em; " />
+		<div class="col-12 mt-4 mb-2 title">
+			<div class="row justify-content-center">
+				<div class="col-md-4 col-12 text-md-right text-center mb-2" style="text-align:center">
+					<img src="img/mas-logo-square.png" style="width:8em; " />
+					<img src="img/iniciativas.png" style="width:4em; " />
 				</div>
-				<div class="col-md-8 col-12 text-md-left text-center mb-2 pb-2">
-					<h1><b>MAS dashboard</b></h1>
+				<div class="col-md-6 col-12 text-md-left text-center">
+					<h1><b>MAS <a href="https://drive.google.com/drive/folders/0AGbMlkXw2-p0Uk9PVA">dashboard</a></b></h1>
 					Shortcuts to <a href="#reports">reports</a> &amp; <a href="#sources">sources</a>
 				</div>
 			</div>
 		</div>
 		<!-- ********************* REPORTS *********************  -->
 		<div class="col-12">
-			&nbsp;&nbsp;<a href="https://drive.google.com/drive/folders/0AGbMlkXw2-p0Uk9PVA">📁 Google Drive Dashboard</a>:
 			<div id="reports">
 				<big>&nbsp;&nbsp;<a href="https://drive.google.com/drive/folders/1DzD_MGbXfnsw2SlYiKnczJ2U7Y8AxUMK"><b>📊 Reports</b></a>:</big>
 				<dl class="row">
@@ -171,6 +179,10 @@
 			<div class="source">
 				<a href="https://mx.lifeqisystem.com/programmes/100010/projects/">LifeQI projects</a>
 			</div>
+			<br />
+			<br />
+			<br />
+			<br />
 	</div> <!-- row -->
 </div> <!-- container -->
 
