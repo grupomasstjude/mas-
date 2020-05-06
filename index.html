@@ -13,10 +13,31 @@
 		<style>
 			body {font-family:sans-serif; line-height:2em; margin-top:2em; background:#f5f5f5}
 
-			#top-bkg {position:fixed; top:0; right:0; width:100%; height:4em; background:transparent url("img/bkg-to-repeat.png") repeat-x fixed top; background-size:auto 4em; z-index:10; text-align:right}
-			#top-bkg img {height:4em; margin-top:0.04em}
-			#bottom-bkg {position:fixed; bottom:0; left:0; width:100%; height:4em; background:transparent url("img/bottom-bkg-to-repeat.png") repeat-x fixed bottom; background-size:auto 4em; z-index:10}
-			#bottom-bkg img {height:4em; margin-top:-0.04em}
+			/* Background */
+			#top-bkg {position:fixed; top:0; right:0; width:100%; height:4em; background:transparent url("img/bkg/red-repeat.png") repeat-x fixed top; background-size:auto 4em; z-index:10; text-align:right}
+				#top-bkg::after, #bottom-bkg::after { content:""; position:absolute; bottom:0; left:0; width:100%; height:4em; background:transparent url("img/bkg/red-corner.png") no-repeat right bottom; background-size:auto 4em; }
+				/* Colors */
+					.gray #top-bkg {background-image:url("img/bkg/gray-repeat.png")}
+						.gray #top-bkg:after {background-image:url("img/bkg/gray-corner.png")}
+					.green #top-bkg {background-image:url("img/bkg/green-repeat.png")}
+						.green #top-bkg:after {background-image:url("img/bkg/green-corner.png")}
+					.blue #top-bkg {background-image:url("img/bkg/blue-repeat.png")}
+						.blue #top-bkg:after {background-image:url("img/bkg/blue-corner.png")}
+					.yellow #top-bkg {background-image:url("img/bkg/yellow-repeat.png")}
+						.yellow #top-bkg:after {background-image:url("img/bkg/yellow-corner.png")}
+			#bottom-bkg {position:fixed; bottom:0; left:0; width:100%; height:4em; z-index:10}
+				#bottom-bkg::before { content:""; position:absolute; bottom:0; width:100%; height:100%; background:transparent url("img/bkg/red-repeat.png") repeat-x fixed bottom; background-size:auto 4em; transform:scaleX(-1) scaleY(-1); }
+				#bottom-bkg::after { transform:scaleX(-1) scaleY(-1); }
+				/* Colors */
+					.gray #bottom-bkg::before {background-image:url("img/bkg/gray-repeat.png")}
+						.gray #bottom-bkg::after {background-image:url("img/bkg/gray-corner.png")}
+					.green #bottom-bkg::before {background-image:url("img/bkg/green-repeat.png")}
+						.green #bottom-bkg::after {background-image:url("img/bkg/green-corner.png")}
+					.blue #bottom-bkg::before {background-image:url("img/bkg/blue-repeat.png")}
+						.blue #bottom-bkg::after {background-image:url("img/bkg/blue-corner.png")}
+					.yellow #bottom-bkg::before {background-image:url("img/bkg/yellow-repeat.png")}
+						.yellow #bottom-bkg::after {background-image:url("img/bkg/yellow-corner.png")}
+			#bottom-bkg img {height:4em; transform:scaleX(-1) scaleY(-1) }
 
 			.title {color:#7c1e34}/*; border-bottom:5px solid #c50b3b}*/
 			.title a {color:#7c1e34; text-decoration:underline; font-weight:bold}
@@ -37,6 +58,7 @@
 				
 			big {display:inline-block; margin:0.5em 0.25em; font-size:1.5em}
 		</style>
+
 		
 		<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -48,8 +70,8 @@
 	</head>
 	<body>
 
-<div id="top-bkg"><img src="img/top-bkg.png" /></div>
-<div id="bottom-bkg"><img src="img/bottom-bkg.png" /></div>
+<div id="top-bkg"></div>
+<div id="bottom-bkg"></div>
 <div class="container">
 	<div class="row justify-content-center">
 		<div class="col-12 mt-4 mb-2 title">
@@ -190,5 +212,36 @@
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<script>
+			var Frame = {
+				colors: "green blue yellow gray",
+				toggle: function(inOrOut, that) { that = $(that);
+					$("body").removeClass(Frame.colors);
+					if(inOrOut == "in") {
+						$("body").addClass( that.is(".btn-success, .btn-outline-success") ? 
+								"green"
+							: that.is(".btn-info,.btn-outline-info") ?
+								"blue"
+							: that.is(".btn-warning,.btn-outline-warning") ?
+								"yellow"
+							: that.is(".btn-secondary,.btn-outline-secondary") ?
+								"gray"
+							: ""
+						);
+					}
+				},
+				metaToggle: function(inOrOut) {
+					return function(e) {
+						Frame.toggle(inOrOut, this);
+					}
+				}
+			};
+			jQuery(document).ready(function() {
+				$("span.btn-label, span.btn-outline-label, span.btn-blank-label").closest("a").hover(
+					Frame.metaToggle("in"),
+					Frame.metaToggle("out")
+				);
+			})
+		</script>
 	</body>
 </html>
