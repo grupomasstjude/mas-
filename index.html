@@ -58,8 +58,6 @@
 			.title {color:#000}/*; border-bottom:5px solid #c50b3b}*/
 			.title a {color:#000; text-decoration:underline;}
 				
-			div.source {opacity:0.5}
-				div.source:hover {opacity:1}
 			
 			#sources {margin-top:2em; background:transparent}
 			.btn { margin-bottom:10px; color:white }
@@ -90,9 +88,9 @@
 				.btn:hover .btn-outline-label img {-webkit-filter: brightness(0) invert(100%); }
 			big {display:inline-block; margin:0.5em 0.25em; font-size:1.5em}
 
-			.tarjetas .btn {background:#989DA3}
-			.tarjetas .btn .btn-label {background:#B6B9BB}
-			.tarjetas .btn:hover .btn-label {background:#989DA3}
+			.tarjetas .btn {border-color:#989DA3; color:#989DA3; background:transparent}
+			.tarjetas .btn .btn-label {background:transparent}
+			.tarjetas .btn:hover {background:#eee; border-color:#555 color:#555}
 
 			.aggregate .btn {background:#5c646a}
 			.aggregate .btn .btn-label {background:#6c757d}
@@ -287,41 +285,8 @@
 	</div> <!-- row -->
 </div> <!-- container -->
 </div>
-
-
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>-->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-		<script>
-			var Frame = {
-				colors: "green blue yellow gray",
-				toggle: function(inOrOut, that) { that = $(that);
-					$("body").removeClass(Frame.colors);
-					if(inOrOut == "in") {
-						$("body").addClass( that.is(".modernization, .modernization-outline") ? 
-								"green"
-							: that.is(".evidence,.evidence-outline") ?
-								"blue"
-							: that.is(".btn-warning,.btn-outline-warning") ?
-								"yellow"
-							: that.is(".btn-secondary,.btn-outline-secondary") ?
-								"gray"
-							: ""
-						);
-					}
-				},
-				metaToggle: function(inOrOut) {
-					return function(e) {
-						Frame.toggle(inOrOut, this);
-					}
-				}
-			};
-			jQuery(document).ready(function() {
-				$("span.btn-label, span.btn-outline-label, span.btn-blank-label").closest("a").hover(
-					Frame.metaToggle("in"),
-					Frame.metaToggle("out")
-				);
-			})
-		</script>
 	</body>
 </html>
