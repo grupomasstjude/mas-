@@ -1,0 +1,87 @@
+@charset "UTF-8";
+body {
+  text-align: left; }
+
+.search {
+  margin: 0;
+  width: 50%;
+  text-align: right; }
+  .search img {
+    width: 50px;
+    padding-right: 10px;
+    vertical-align: middle; }
+  .search #search {
+    padding: 5px 10px;
+    width: 400px;
+    font-size: 2em;
+    text-align: right;
+    vertical-align: middle; }
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 5px 3px; }
+
+.results {
+  padding: 20px 0;
+  margin: 0 auto;
+  width: 100%;
+  font-family: Verdana, sans-serif;
+  color: #999; }
+  .results div.result i {
+    font-style: normal;
+    color: #777; }
+  .results div.result b {
+    color: #777; }
+  .results div.result:hover, .results div.result.selected {
+    background: #FEFBE5; }
+  .results div.result.selected div.name {
+    position: relative; }
+  .results div.result.selected div.name::before {
+    content: "◀";
+    position: absolute;
+    right: -50px;
+    margin-top: 7px;
+    top: 0;
+    z-index: 2; }
+  .results div.result div.name {
+    display: inline-block;
+    vertical-align: middle;
+    width: 50%;
+    margin-right: 50px;
+    text-align: right;
+    position: relative; }
+    .results div.result div.name a, .results div.result div.name a:visited {
+      color: #333;
+      width: 200%;
+      margin-left: -100%; }
+      .results div.result div.name a i, .results div.result div.name a:visited i {
+        display: none; }
+      .results div.result div.name a b, .results div.result div.name a:visited b {
+        color: #333; }
+    .results div.result div.name span.score {
+      display: inline-block;
+      padding-left: 10px;
+      position: absolute;
+      top: 0;
+      left: 0; }
+  .results div.result div.path {
+    display: inline-block;
+    vertical-align: middle;
+    width: 45%;
+    text-align: left;
+    white-space: nowrap;
+    font-size: 0.9em;
+    overflow: auto; }
+    .results div.result div.path a, .results div.result div.path a:visited {
+      color: #bbb; }
+      .results div.result div.path a:hover, .results div.result div.path a:visited:hover {
+        text-decoration: underline; }
+  .results div.result img {
+    width: 25px;
+    vertical-align: middle;
+    padding: 0 10px;
+    padding-right: 20px;
+    margin-right: -50px; }
+
+/*# sourceMappingURL=style.css.map */
