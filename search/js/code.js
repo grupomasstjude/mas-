@@ -7,10 +7,12 @@ var CS = { //Cloud Search
 	},
 	detectFileType: (name) => {
 		var result = 'file';
-		if(name.match(/xlsx?$/)) 		{ result = 'excel' }
-		else if(name.match(/docx?$/))	{ result = 'word' }
-		else if(name.match(/pppt$/)) 	{ result = 'powerpoint' }
-		else if(name.match(/pdf$/)) 	{ result = 'pdf' }
+		if(name.match(/xlsx?$/i)) 		{ result = 'excel' }
+		else if(name.match(/docx?$/i))	{ result = 'word' }
+		else if(name.match(/pppt$/i)) 	{ result = 'powerpoint' }
+		else if(name.match(/pdf$/i)) 	{ result = 'pdf' }
+		else if(name.match(/png/i)) 	{ result = 'png' }
+		else if(name.match(/jpg/i)) 	{ result = 'jpg' }
 		return result;
 	},
 
@@ -38,6 +40,33 @@ var CS = { //Cloud Search
 					replace(/\.(docx?|xlsx?|ppt|pdf)/i,'').replace(/\|/,'');
 			return [path, name]
 		}
+	},
+
+	search: (query) => {
+		var queryIsSignature = query.match("_"),
+			signature = (query.match(/_\w\w\w?/)||['_'])[0],
+			matchQuery = new RegExp( query, 'i'),
+			matchQueryAsRoot = new RegExp( "^[^/]*"+query, 'i'),
+			isRoot = new RegExp( "^[^/]*/$", 'i'),
+			allResults = qs.search(query).
+				filter(match => match.score > 0.4).
+				map(match => {
+					var item = match.item,
+						slashes = CS.count.slashes( item.path );
+					match.slashes = slashes;
+
+					match.score += -slashes*0.05 +
+										( (item.type == "dir") ? 0.1 : 0 ) +
+										( item.name.match(matchQuery) ? 0.1 : 0 ) +
+										( item.path.match(matchQuery) ? 0.1 : 0 ) +
+										( item.path.match(matchQueryAsRoot) ? 0.1 : 0 ) +
+										( item.path.match(isRoot) ? 0.2 : 0 ) +
+										( (queryIsSignature && item.name.match(signature)) ? 0.2 : 0);
+					return match;
+				}).
+				sort((a,b)=> b.score - a.score);
+				//sort((a,b)=> a.item.path.length - b.item.path.length),
+		return allResults.slice(0,40);
 	},
 
 	count: {
@@ -89,30 +118,14 @@ var CS = { //Cloud Search
 	keyup: function(e) {
 		if( CS.isNavigational(e) ) { return; };
 		var query = $(this).val(),
-			queryIsSignature = query.match("_"),
-			signature = (query.match(/_\w\w\w?/)||['_'])[0]
-			allResults = qs.search(query).
-				filter(match => match.score > 0.4).
-				map(match => {
-					var item = match.item,
-						slashes = CS.count.slashes( item.path );
-					match.score -= slashes*0.05;
-					match.score += (item.type == "dir") ? 0.1 : 0;
-					match.score += item.path.match(query) ? 0.2 : 0;
-					match.score += (queryIsSignature && item.name.match(signature)) ? 0.2 : 0
-					match.slashes = slashes;
-					return match;
-				}).
-				sort((a,b)=> b.score - a.score),
-				//sort((a,b)=> a.item.path.length - b.item.path.length),
-			topResults = allResults.slice(0,20),
+			topResults = CS.search( query );
 			out = "";
 
 		topResults.map( (result, i) => { 
 			var { path, type, name, time } = result.item;
 			var [hilitedPath, hilitedName] = CS.hilite.all( path, query, result.matches.path );
 
-			out += '<div class="result'+(i == 0 ? ' selected' : '')+'">' +
+			out += '<div class="result'+(i == 0 ? ' selected' : (i >= 20 ? ' extra' : ''))+'">' +
 				'<div class="name">'+
 					'<a href="'+CS.path.root + path+'" target="_blank">' + 
 						hilitedName  +

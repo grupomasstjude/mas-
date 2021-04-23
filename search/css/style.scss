@@ -16,24 +16,28 @@ a {text-decoration:none; display:inline-block; padding:5px 3px}
 			div.name::before {
 			content:"◀";
 			position:absolute;
-			right:-50px;
+			right:-28px;
 			margin-top:7px;
 			top:0;
 			z-index:2;
 			}
 		}
-		div.name {display:inline-block; vertical-align:middle; width:50%; margin-right:50px; text-align:right; position:relative;
+		div.name {box-sizing:border-box; display:inline-block; vertical-align:middle; width:50%; padding-right:30px; text-align:right; position:relative;
 			a, a:visited {color:#333; width:200%; margin-left:-100%;
 				i {display:none}
 				b {color:#333}
 			} 
 			span.score {display:inline-block; padding-left:10px; position:absolute; top:0; left:0}
 		}
-		div.path {display:inline-block; vertical-align:middle; width:45%; text-align:left; white-space:nowrap; font-size:0.9em; overflow:auto;
+		div.path {box-sizing:border-box; display:inline-block; vertical-align:middle; width:50%; padding-left:30px; text-align:left; white-space:nowrap; font-size:0.9em; overflow:auto;
 			a, a:visited {color:#bbb;
 				&:hover {text-decoration:underline}
 			}
 		}
 		img {width:25px; vertical-align:middle; padding:0 10px; padding-right:20px; margin-right:-50px}
+	}
+	div.result.extra {
+		opacity:0.3;
+		&:hover, &.selected {opacity:1}
 	}
 }
