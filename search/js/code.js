@@ -86,7 +86,7 @@ var CS = { //Cloud Search
 	},
 
 	path: {
-		root: "https://www.dropbox.com/home/MAS/",
+		root: "https://www.dropbox.com/home",
 		splitLink: (path, url) =>  {
 			var subpaths = path.split('|'),
 				suburls = url.split('/'),
