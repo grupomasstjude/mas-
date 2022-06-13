@@ -1,0 +1,19 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    dropbox-api (0.4.8)
+      hashie (~> 3.4.0)
+      multi_json (~> 1.10)
+      oauth (~> 0.4.7)
+    hashie (3.4.6)
+    multi_json (1.15.0)
+    oauth (0.4.7)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  dropbox-api
+
+BUNDLED WITH
+   2.0.2
