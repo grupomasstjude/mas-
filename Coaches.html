@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		 <!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+		<title>MAS Coaches</title>
+
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico?123">
+		<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+
+		<style>
+			body {font-family:sans-serif; line-height:2em;
+				background:white}
+			div#above-fold {background:white; padding:4em 0}
+			div#below-fold {display:none}
+			div#below-fold.expanded {display:block}
+			div#fold .fold-bkg {
+				height:75px; margin-bottom:2em;
+				opacity:0.5;
+				background-image:url("img/mas/patterns/evidence.png");
+				background-repeat:repeat;
+				background-size:75px}
+				div#fold span.expand {display:inline-block}
+				div#fold span.contract {display:none}
+				div#fold.expanded span.expand {display:none}
+				div#fold.expanded span.contract {display:inline-block}
+			div#fold a {color:#777}
+			div#fold a:hover {color:#000}
+
+			/* Background */
+			#top-bkg {position:fixed; top:0; right:0; width:100%; height:4em; background:transparent url("img/bkg/red-repeat.png") repeat-x fixed top; background-size:auto 4em; z-index:10; text-align:right}
+				#top-bkg::after, #bottom-bkg::after { content:""; position:absolute; bottom:0; left:0; width:100%; height:4em; background:transparent url("img/bkg/red-corner.png") no-repeat right bottom; background-size:auto 4em; }
+				/* Colors */
+					.gray #top-bkg {background-image:url("img/bkg/gray-repeat.png")}
+						.gray #top-bkg:after {background-image:url("img/bkg/gray-corner.png")}
+					.green #top-bkg {background-image:url("img/bkg/green-repeat.png")}
+						.green #top-bkg:after {background-image:url("img/bkg/green-corner.png")}
+					.blue #top-bkg {background-image:url("img/bkg/blue-repeat.png")}
+						.blue #top-bkg:after {background-image:url("img/bkg/blue-corner.png")}
+					.yellow #top-bkg {background-image:url("img/bkg/yellow-repeat.png")}
+						.yellow #top-bkg:after {background-image:url("img/bkg/yellow-corner.png")}
+			#bottom-bkg {position:fixed; bottom:0; left:0; width:100%; height:4em; z-index:10}
+				#bottom-bkg::before { content:""; position:absolute; bottom:0; width:100%; height:100%; background:transparent url("img/bkg/red-repeat.png") repeat-x fixed bottom; background-size:auto 4em; transform:scaleX(-1) scaleY(-1); }
+				#bottom-bkg::after { transform:scaleX(-1) scaleY(-1); }
+				/* Colors */
+					.gray #bottom-bkg::before {background-image:url("img/bkg/gray-repeat.png")}
+						.gray #bottom-bkg::after {background-image:url("img/bkg/gray-corner.png")}
+					.green #bottom-bkg::before {background-image:url("img/bkg/green-repeat.png")}
+						.green #bottom-bkg::after {background-image:url("img/bkg/green-corner.png")}
+					.blue #bottom-bkg::before {background-image:url("img/bkg/blue-repeat.png")}
+						.blue #bottom-bkg::after {background-image:url("img/bkg/blue-corner.png")}
+					.yellow #bottom-bkg::before {background-image:url("img/bkg/yellow-repeat.png")}
+						.yellow #bottom-bkg::after {background-image:url("img/bkg/yellow-corner.png")}
+			#bottom-bkg img {height:4em; transform:scaleX(-1) scaleY(-1) }
+
+			.title {color:#000}/*; border-bottom:5px solid #c50b3b}*/
+			.title a {color:#000; text-decoration:underline;}
+				
+			
+			#sources {margin-top:2em; background:transparent}
+			.btn { margin-bottom:10px; color:white }
+				.btn img {height:2em}
+				.btn-label {position: relative;left: -12px;display: inline-block;padding: 6px 12px;background: rgba(0,0,0,0.15);border-radius: 3px 0 0 3px;}
+					.btn-outline-label {position:relative; display: inline-block; padding:3px 0; padding-right:12px; border-radius: 3px 0 0 3px;}
+					.btn-blank-label {display:inline-block; height:2.4em; vertical-align:middle; padding:3px 0}
+					.btn-labeled {padding-top: 0;padding-bottom: 0;}
+				/* Quality */
+					.btn.quality, .btn:hover.quality-outline {background:#E5BF23}
+					.btn.quality .btn-label {background:#FFD100}
+					.btn.quality-outline {border-color:#E5BF23; color:#E5BF23}
+				/* Collaboration */
+					.btn.collaboration, .btn:hover.collaboration-outline {background:#EF432D}
+					.btn.collaboration .btn-label {background:#EF7E75}
+					.btn.collaboration-outline {border-color:#EF432D; color:#EF432D}
+				/* Modernization */
+					.btn.modernization, .btn:hover.modernization-outline {background:#74BD9F}
+					.btn.modernization .btn-label {background:#8DE2BB}
+					.btn.modernization-outline {border-color:#52BA8B; color:#52BA8B}
+				/* Evidence */
+					.btn.evidence, .btn:hover.evidence-outline {background:#1F6868}
+					.btn.evidence .btn-label {background:#4D9E9E}
+					.btn.evidence-outline {border-color:#3B7082; color:#3B7082}
+				/* HOVER */
+				.btn:hover .btn-label {background:transparent}
+				.btn:hover {color:white}
+				.btn:hover .btn-outline-label img {-webkit-filter: brightness(0) invert(100%); }
+			big {display:inline-block; margin:0.5em 0.25em; font-size:1.5em}
+
+			.tarjetas .btn {border-color:#989DA3; color:#989DA3; background:transparent}
+			.tarjetas .btn .btn-label {background:transparent}
+			.tarjetas .btn:hover {background:#eee; border-color:#555 color:#555}
+
+			.aggregate .btn {background:#5c646a}
+			.aggregate .btn .btn-label {background:#6c757d}
+			.aggregate .btn:hover .btn-label {background:#5c646a}
+
+			.form, .app, .aggregate .app {padding:0; border-radius:0 .25rem .25rem 0; border-width:0; background:#fff}
+			.form img, .app img {height:2.5em; opacity:0.5}
+			.form img:hover, .app img:hover {opacity:1}
+			.preform {border-radius:.25rem 0 0 .25rem}
+		</style>
+
+		<link rel="manifest" href="manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+	</head>
+	<body>
+
+<div id="above-fold">
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-12 mb-2 title">
+			<h1 class="row justify-content-center align-items-center">
+				<div class="col-lg-6 text-center">
+					<img src="img/logo-horizontal.png" style="width:10em; vertical-align:middle; margin-bottom:0.5em;" />
+				</div>
+				<div class="col-lg-3; text-left align-middle">
+					Accesos MAS Coaches<br />
+					<div style="line-height:0.7em">
+						<small style="font-size:50%">
+							
+						</small><br />
+						
+					</div>
+				</div>
+			</h1>
+		</div>
+		<!-- ********************* REPORTS *********************  -->
+		<div class="col-12">
+			<div id="reports">
+				<big>&nbsp;&nbsp;<a href="" target="_blank"><b> Carpetas</b></a>:</big>
+				<dl class="row">
+					<dt class="col-lg-3 col-md-5 col-sm-12 text-md-right text-center"></dt>
+					<dd class="col-lg-9 col-md-7 col-sm-12 text-md-left text-center aggregate">
+						<a href="https://drive.google.com/drive/folders/1W4Y3vIJOUSCvp4a9j6XruCjONmCueBSk?usp=sharing" target="_blank" class="btn btn-labeled btn-secondary"><span class="btn-label"><img src="img/icons/collaborator.png" /></span> 
+						Programa de desarrollo de Coaches
+							</a>
+						</a>
+				
+				
+						</a>
+				
+						<a href="https://drive.google.com/drive/folders/1bqiaHtl5rKp5nR37uJzqAy_W05OUS5DH?usp=sharing" target="_blank" class="btn btn-labeled btn-secondary"><span class="btn-label"><img src="img/icons/x.png" /></span>Materiales
+							</a>
+						</a>
+		<a href="https://drive.google.com/drive/folders/1Pd4juHQX1dgSId9shTAN10PaZPebpa4i?usp=sharing" target="_blank" class="btn btn-labeled btn-secondary"><span class="btn-label"><img src="img/icons/collaborator.png" /></span>MAS Caf¨¦
+							</a>
+						</a>
+						<a href="https://drive.google.com/drive/folders/1qpzY6mhmL7eDbZA_3690T5YX6SRi4983?usp=sharing" target="_blank" class="btn btn-labeled btn-secondary"><span class="btn-label"><img src="img/icons/multifilter.png" /></span>Grabaciones reuniones con Coaches</a>
+						<a href="https://drive.google.com/drive/folders/1-bYVMG7czYacKtTkUSXKkNberPZNRoTl?usp=sharing" target="_blank" class="btn btn-labeled btn-secondary">
+					<span class="btn-label"><img src="img/icons/hospital-status.png" /></span> Coaching Res MAS
+							</a>
+		<!--<a href="https://docs.google.com/spreadsheets/d/15kOY55GxoWHKCSuhew4kthf_dwtL0ql3fUKgbVl2Q4U/edit#gid=1895744050" class="btn btn-labeled btn-secondary"><span class="btn-label"><img src="img/iniciativas.png" /></span>Overview</a>-->
+					</dd>
+					
+				
+				</dl>
+			</div> <!--reports-->
+		</div> <!-- col-12 -->
+	</div> <!-- row -->
+</div> <!-- container -->
+</div> <!-- above-fold -->
+
+
+
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" target="_blank" crossorigin="anonymous"></script>
+		<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>-->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" target="_blank" crossorigin="anonymous"></script>
+	</body>
+</html>
